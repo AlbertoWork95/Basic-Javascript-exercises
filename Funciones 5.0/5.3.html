@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones 5.3</title>
+</head>
+<body>
+    
+    <script>
+        var numero1 = prompt("Escribe un numero");
+        var numero2 = prompt("Escribe un numero");
+        
+    
+        function MenorToMayor(number1, number2) {
+
+            var arrayNumbers = [];
+
+            var result = parseInt(number1) + parseInt(number2);
+
+            document.write("<h1>" + result + "</h1>");
+        
+            if(number1 < number2) {
+
+                for(i = number1; i < number2; i++) {
+
+                    arrayNumbers.push(i);
+
+                }
+            }
+            
+            if(number2 < number1) {
+
+                for(i = number2; i < number1; i++) {
+
+                    arrayNumbers.push(i);
+
+                }
+            }
+            
+            return arrayNumbers;
+            
+        }
+        
+        var rest = MenorToMayor(numero1, numero2);
+
+        document.write("Resultado de numero pequeño a numero grande:" + rest);
+        
+    </script>
+</body>
+</html>

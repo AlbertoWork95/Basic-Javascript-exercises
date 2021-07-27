@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.1</title>
+</head>
+<body>
+    <script>
+        class coche {
+
+            constructor(wheels, model, color) {
+
+                this.ruedas = wheels;
+
+                this.modelo = model;
+                
+                this.color = color;
+
+            };
+
+            getWheelsAndModel() {
+
+                return "Puertas:" + " " + this.ruedas + " " +  "Modelo:" + " " + this.modelo + " " + "Color:" + " " + this.color;
+
+            };
+
+        };
+
+        var bmw = new coche(5, 'bmw', 'black');
+
+        console.log(bmw.getWheelsAndModel());
+
+        var audi = new coche(5, 'audi', 'red');
+
+        console.log(audi.getWheelsAndModel())
+
+    </script>
+</body>
+</html>

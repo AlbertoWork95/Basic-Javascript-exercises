@@ -1,0 +1,16 @@
+.hideForm {
+    visibility: hidden;
+}
+
+#formRegister {
+    background-color: aquamarine;
+}
+
+.showForm {
+    visibility: visible;
+}
+
+.showLogin {
+    background-color: aquamarine;
+    visibility: visible;
+}

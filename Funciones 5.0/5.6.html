@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6</title>
+</head>
+<body>
+    <script>
+
+        var arrayAbecedario = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"].map(i=>i.toLowerCase());;
+
+        var text = prompt("Pon lo que quieras:");
+
+        function detectarLetras(texting, abecedario) {
+
+            var arrayOutput = abecedario.map(i=>0);
+            
+            for(i = 0; i < texting.length; i++) {
+
+                var position = abecedario.indexOf(texting[i]);
+
+                arrayOutput[position]++
+
+                console.log(texting[i], position, arrayOutput[position]);
+                
+            }
+            
+            return arrayOutput;
+
+        }
+
+        var rest = detectarLetras(text, arrayAbecedario);
+
+        document.write(rest);
+
+    </script>
+</body>
+</html>

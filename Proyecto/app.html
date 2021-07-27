@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>DAAVIDASOOOOOOO!</title>
+</head>
+
+<body>
+
+    <div id="formRegister">
+
+        <span>Email </span><input type="text" id="email"><br>
+
+        <span>Pasword </span><input type="password" id="password"><br>
+
+        <span>Confirm password </span><input type="password" id="confirmPaswword"><br>
+
+        <span>Send </span><input type="button" onclick="send()"><br>
+
+        <span>Login</span><input type="button" onclick="showLogin()"><br>
+
+    </div>
+
+    <div id="showForm" class="hideForm">
+
+        <span>Añade tu link </span><input type="text" id="link">
+
+        <span>Envia tu link </span><input type="button" onclick="sendLink()">
+
+    </div>
+
+    <div id="hideLogin" class="hideForm">
+
+        <span>Email</span><input type="text" id="emailLogin">
+
+        <span>Contraseña</span><input type="text" id="contraseñaLogin">
+        
+        <span>Send</span><input type="button" onclick="sendRequestLogin()">
+
+    </div>
+
+
+    <script>
+
+        async function send() {
+
+            var email = document.getElementById("email").value;
+
+            console.log(email);
+
+            var password = document.getElementById("password").value;
+
+            console.log(password);
+
+            var confirmPassword = document.getElementById("password").value;
+
+            console.log(confirmPassword);
+
+            if (password == confirmPassword) {
+
+                // var restServer = await send_request('POST',"register", {email: email, password:password});
+
+                // console.log(restServer)
+
+
+                //if(restServer.acknowledged){
+                hideForm();
+                showMenu();
+                //}
+
+            } else {
+
+                document.write("Contraseña Incorreta");
+
+            }
+
+        }
+
+        function hideForm() {
+
+            document.getElementById("formRegister").style.display = "none";
+
+        }
+
+
+        function showMenu() {
+
+            show("showForm");
+
+        }
+
+        function showLogin() {
+
+            hideForm();
+
+            show("hideLogin");
+
+        }
+
+        function show(idElement) {
+
+            document.getElementById(idElement).classList.remove("hideForm");
+
+        }
+
+        function sendRequestLogin() {
+
+            var email = document.getElementById("email").value;
+
+            console.log(email);
+
+            var password = document.getElementById("password").value;
+
+            console.log(password);
+            
+
+            // await send_request('POST',"login", {email: email, password:password});
+
+        }
+
+        function sendLink() {
+            
+            var email = document.getElementById("email").value;
+
+            console.log(email);
+
+            var password = document.getElementById("password").value;
+
+            console.log(password);
+
+            // await send_request('POST',"register", {email: email, password:password});
+
+        }
+
+        async function send_request(method, url, body) {
+            var base = 'http://25.37.121.29:3000/';
+            return new Promise((resolve, reject) => {
+                fetch(base + url,
+                    {
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        method: "POST",
+                        body: JSON.stringify(body)
+                    })
+                    .then(async function (res) { resolve(await res.json()) })
+                    .catch(function (res) { reject(res) })
+            })
+        }
+        
+    </script>
+
+</body>
+
+</html>
